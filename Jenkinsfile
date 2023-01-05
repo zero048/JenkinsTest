@@ -1,3 +1,4 @@
+env JAVA_OPTS="-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true"
 pipeline {
   agent any
   stages {
