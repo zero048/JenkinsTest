@@ -3,7 +3,7 @@ pipeline {
         stages {
             stage('Build') {
                 steps {
-                    sh 'mvn clean install'
+                    sh 'mvn -B -DskipTests clean package'
                 }
             }
             stage('Test') {
@@ -12,7 +12,7 @@ pipeline {
                 }
 	            post {
                 always {
-                    junit 'build/reports/**/*.xml'
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
